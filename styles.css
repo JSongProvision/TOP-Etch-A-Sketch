@@ -1,17 +1,54 @@
 body {
+    
+    font-family: sans-serif;
+    
     margin:0;
-    padding:0;
+    padding:0; 
+}
+
+.container {
+    height:100vh;
+    width:100vw;
 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.container {
+.header {
+    flex-basis: 20%;
+    display:flex;
+    flex-direction: column;
+}
+
+.grid-btn {
+
+    background-color:green;
+    border:none;
+    color:white;
+    height: 50px;
+    width: 150px;
+    align-self: center;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin:10px;
+}
+
+#drawpad {
+    display:flex;
+    flex-basis:70%;
+    justify-content:center;
+    align-items:center;
+}
+
+#grid {
     display: flex;
     flex-wrap: wrap;
-    width: 50vw;
-    height: 100vh;
+    height: 100%;
+    padding:20px;
+    aspect-ratio: 1;
     gap:0px;
 }
 
@@ -19,8 +56,17 @@ body {
     flex-basis: 25%;
     aspect-ratio: 1;
     box-sizing: border-box;
-    background-color:aqua;
     border-color:black;
     border-style:solid;
 }
 
+.hovered {
+    background-color: black;
+}
+
+.dialog-mask {
+    background-color:gray;
+    z-index: 1;
+    height:100vh;
+    width: 100vw;
+}
