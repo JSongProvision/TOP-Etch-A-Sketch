@@ -1,4 +1,7 @@
 const grid = document.querySelector("#grid");
+
+createGrid(4);
+
 grid.addEventListener('mouseover',(event) => {
     const target = event.target;
     if(target.classList.contains('square')){
@@ -11,6 +14,9 @@ const body = document.body;
 
 setGridBtn.addEventListener('click',(event) => {
     createInputDialog();
+
+    const submitBtn = document.querySelector(".submit-btn");
+    submitBtn.addEventListener('click', resetGrid);
 });
 
 function createGrid(sideSize) {
@@ -44,6 +50,7 @@ function createInputDialog() {
 
     const input = document.createElement('input');
     input.classList.add('input');
+    input.placeholder = " # per side";
     dialog.appendChild(input);
 
     const submitBtn = document.createElement ('button');
@@ -54,5 +61,12 @@ function createInputDialog() {
     body.appendChild(mask);
 }
 
-
-createGrid(4);
+function resetGrid() {
+    const input = document.querySelector('.input');
+    userRowSize = input.value;
+    grid.replaceChildren();
+    createGrid(userRowSize);
+    
+    const mask = document.querySelector('.dialog-mask');
+    mask.remove();
+}
