@@ -1,9 +1,12 @@
 body {
     
-    font-family: sans-serif;
+    font-family: "space-grotesk", sans-serif;
     
     margin:0;
     padding:0; 
+    background-size: cover;
+    background-image: url(assets/img/background.png);
+
 }
 
 .container {
@@ -14,6 +17,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    color:midnightblue;
 }
 
 .header {
@@ -24,7 +28,7 @@ body {
 
 .grid-btn {
 
-    background-color:green;
+    background-color:darkblue;
     border:none;
     color:white;
     height: 50px;
@@ -32,8 +36,19 @@ body {
     align-self: center;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 1rem;
+    font-size: .9rem;
     margin:10px;
+}
+
+.grid-btn:hover {
+    background-color:midnightblue;
+}
+
+.grid-btn:active {
+    background-color: white;
+    border-style: solid;
+    border-color: blue;
+    color: blue;
 }
 
 #drawpad {
@@ -41,23 +56,29 @@ body {
     flex-basis:70%;
     justify-content:center;
     align-items:center;
+    min-height: 0;
 }
 
 #grid {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
     height: 100%;
-    padding:20px;
     aspect-ratio: 1;
     gap:0px;
+    border-style: solid;
+    border-width: 1px;
+    background-color: rgba(255,255,255, .5);
+    Backdrop-filter: blur(40px);
 }
 
 .square {
-    flex-basis: 25%;
+    /* flex-basis: 25%; */
     aspect-ratio: 1;
     box-sizing: border-box;
     border-color:black;
     border-style:solid;
+    border-width:1px;
 }
 
 .hovered {
@@ -90,30 +111,61 @@ body {
     display:flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 40px;
+    margin:0;
+    justify-content: center;
+}
+
+.dialog-msg {
+    font-size: 1.5rem;
+    margin:0;
 }
 
 .warning {
     color: red;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: 1rem;
+    margin:0;
+}
+
+.error-label {
+    margin-top: -15px;
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    font-size: .75rem;
+
 }
 
 .input {
     height:30px;
-    width: 90px;
+    width: 70px;
     border-style: solid;
+    border-width: 1px;
+    border-radius: 3px;
     border-color:black;
+    padding-left: 10px;
     
 }
 
 .submit-btn {
-    height: 30px;
-    width: 80px;
+    height: 40px;
+    width: 100px;
     background-color: green;
     color: white;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 5px;
-    border-style:  solid;
+    border-style:  none;
+}
+
+.submit-btn:hover {
+    background-color:darkgreen;
+}
+
+.submit-btn:active {
+    background-color: white;
+    border-style: solid;
+    border-color: green;
+    color: green;
 }
