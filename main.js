@@ -1,10 +1,19 @@
 const grid = document.querySelector("#grid");
+let mouseDown = false;
+
+document.addEventListener('mousedown', () => {
+    mouseDown = true;
+});
+
+document.addEventListener('mouseup', () => {
+    mouseDown = false;
+});
 
 createGrid(4);
 
 grid.addEventListener('mouseover',(event) => {
     const target = event.target;
-    if(target.classList.contains('square')){
+    if(target.classList.contains('square') && mouseDown){
          target.classList.add("hovered");
     }  
 });
